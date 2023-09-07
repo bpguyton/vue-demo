@@ -8,7 +8,7 @@ var employees = ref([
 ])
 var showEmployees = ref(true)
 var new_id = 4;
-var addingEmployee = {id: new_id, first_name: "new", last_name: "guy", title: "manager"}
+var addingEmployee = ref({id: new_id, first_name: "", last_name: "", title: ""})
 
 //var columnHeaders = Object.keys(employees[0])
 var columnHeaders = [
@@ -23,7 +23,7 @@ function showEmployeesChange(){
 }
 
 function addEmployee(){
-    employees.value.push(addingEmployee)
+    employees.value.push(addingEmployee.value)
     new_id++
     console.log(employees.value)
 }
@@ -31,14 +31,17 @@ function addEmployee(){
 
 <template>
     <div class="demo">
-        <v-col class="left">
+        <v-col class="card half left">
             <v-switch @click="showEmployeesChange" label="show/hide employees"></v-switch>
             <div class="table-container" v-show="showEmployees">
                 <v-data-table :headers="columnHeaders" :items="employees" item-key="id" items-per-page="5" width="fit-content"></v-data-table>
             </div>
         </v-col>
-        <v-col class="right">
-            <v-btn @click="addEmployee">Add new employee</v-btn>
+        <v-col class="card half right">
+            <v-text-field class="half" label="First Name" v-model="addingEmployee.first_name"></v-text-field>
+            <v-text-field class="half" label="Last Name" v-model="addingEmployee.last_name"></v-text-field>
+            <v-text-field class="full" label="Title" v-model="addingEmployee.title"></v-text-field>
+            <v-btn @click="addEmployee" class="add">Add new employee</v-btn>
         </v-col>
     </div>
 </template>
@@ -65,15 +68,30 @@ function addEmployee(){
     border-radius: 15px;
     justify-content: center;
 }
-.left{
-    border: dashed;
+.card{
+    border: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+}
+.half{
+    width: 48%;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.left{
+    margin-right: 5px;
 }
 .right{
-    border: dashed;
+    margin-left: 5px;
+}
+.add{
     display: flex;
-    width: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 80%;
 }
 </style>
