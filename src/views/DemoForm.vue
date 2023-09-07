@@ -66,9 +66,6 @@ function addEmployee(){
     justify-content: center;
 }
 .card{
-    border: solid;
-    border-width: 1px;
-    border-radius: 20px;
     margin-left: 10px;
     margin-right: 20px;
     display: flex;
