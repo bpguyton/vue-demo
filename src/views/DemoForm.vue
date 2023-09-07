@@ -16,16 +16,13 @@ var columnHeaders = [
     {title: 'Last', align: 'end', key: 'last_name'},
     {title: 'Title', align: 'end', key: 'title'},
 ]
-console.log(columnHeaders)
 function showEmployeesChange(){
     showEmployees.value = !showEmployees.value
-    console.log(showEmployees.value)
 }
 
 function addEmployee(){
     employees.value.push(addingEmployee.value)
     new_id++
-    console.log(employees.value)
 }
 </script>
 
