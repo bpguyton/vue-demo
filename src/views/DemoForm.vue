@@ -66,10 +66,9 @@ function addEmployee(){
     justify-content: center;
 }
 .card{
-    margin-left: 10px;
-    margin-right: 20px;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 .half{
     width: 48%;
@@ -77,10 +76,10 @@ function addEmployee(){
     margin-right: 3px;
 }
 .left{
-    margin-right: 5px;
+    margin-left: 5%;
 }
 .right{
-    margin-left: 5px;
+    margin-right: 5%;
 }
 .add{
     display: flex;
