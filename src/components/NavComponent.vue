@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LogoComponent from './LogoComponent.vue'
   var menuItems = [
     {id: 1, display: 'aaaa', href: ''},
     {id: 2, display: 'bbbb', href: ''},
@@ -9,9 +10,7 @@
 
 <template>
   <v-app-bar :elevation="1" display="block">      
-    <v-app-bar-nav-icon :width="140" :height="40" class="logo" :to="'/'">
-      <img alt="evolv logo" src="https://evolv.consulting/wp-content/uploads/2020/09/logo.png"/>
-    </v-app-bar-nav-icon>  
+    <logo-component/>
     <v-app-bar-nav-icon :to="'/form'">Form Demo</v-app-bar-nav-icon>
     <v-menu open-on-hover>
       <template v-slot:activator="{ props }">
@@ -47,8 +46,8 @@
       </v-list>
     </v-menu>
     <v-col class="text-right">
-      <v-btn color="primary" class="bsdf" >join us</v-btn>
-      <v-btn color="primary" class="bsdf">connect</v-btn>
+      <v-btn rounded="l" variant="elevated" color="primary">join us</v-btn>
+      <v-btn rounded="l" variant="elevated" color="primary">connect</v-btn>
     </v-col>
   </v-app-bar>
 
@@ -57,9 +56,9 @@
 <style>
 .v-btn{
   width: fit-content !important;
+  margin-left: 1%;
 }
-
-.logo {
-  padding-right: 5% !important;
+.v-app-bar{
+  padding-left: 3%;
 }
 </style>
